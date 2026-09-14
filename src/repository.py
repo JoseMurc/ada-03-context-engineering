@@ -1,4 +1,4 @@
-from src.customer import Customer 
+from src.customer import Customer, update_customer_email 
  
 class CustomerRepository: 
     def __init__(self): 
@@ -17,4 +17,4 @@ class CustomerRepository:
         customer = self.get(customer_id) 
         if customer is None: 
             raise ValueError("customer-not-found") 
-        return customer 
+        return update_customer_email(customer, new_email, updated_by) 
